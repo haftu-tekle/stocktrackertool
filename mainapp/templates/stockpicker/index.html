@@ -1,14 +1,29 @@
 {% extends "../base/basic.html" %}
 {% block title %}
-Inxex Page
+Index Page
 {% endblock %}
 
-{% block template %}
-{% {% include "../base/navbar.html" %}%}
+{% block body %}
+<div class='container'>
+<h1>Stock Tracker</h1>
+<p>Select your stock</p>
+<form action=''>
+<label for='stockpicker:'>
+<select class="form-select form-select-lg mb-3" multiple aria-label="Multiple select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+</form>
+</div>
+{% endblock %}
+{% comment %} {% block template %}
+{% include "../base/navbar.html" %}
 code here
-{% endblock %}
+{% endblock %} {% endcomment %}
 
-{% load static %}
+{% comment %} {% load static %}
 {% block meta %}
 {% endblock %}
 
@@ -19,9 +34,10 @@ code here
 {% endblock %}
 
 {% block body %}
+
 {% endblock %}
 
 {% block js %}
 <script>
 </script>
-{% endblock %}
+{% endblock %} {% endcomment %}

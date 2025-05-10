@@ -1,8 +1,6 @@
 from django.shortcuts import render
-import requests
+from django.http import HttpRequest, HttpResponse
+import django_bootstrap5
 
 def index(request):
-    return render (request, 'stockpicker/index.html')
-
-# def stockpicker(request):
-#     return render(request, 'mainapp/stockpicker.html')
+    return render(request, 'stockpicker/index.html',{})

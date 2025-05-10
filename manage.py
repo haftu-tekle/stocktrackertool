@@ -1,8 +1,13 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+
 import os
 import sys
+from pathlib import Path
 
+VENV_PATH = Path(__file__).resolve().parent / 'stockenv'
+SITE_PACKAGES_PATH = VENV_PATH / 'Lib' / 'site-packages'
+sys.path.insert(0, str(SITE_PACKAGES_PATH))
 
 def main():
     """Run administrative tasks."""
