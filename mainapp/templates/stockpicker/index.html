@@ -1,11 +1,17 @@
-{% extends '../maniapp/basic.html' %}
+{% extends "../base/basic.html" %}
+{% block title %}
+Inxex Page
+{% endblock %}
+
+{% block template %}
+{% {% include "../base/navbar.html" %}%}
+code here
+{% endblock %}
+
 {% load static %}
 {% block meta %}
 {% endblock %}
 
-{% block title %}
-StockPicker
-{% endblock %}
 
 {% block css %}
 <style>
