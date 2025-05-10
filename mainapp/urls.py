@@ -1,10 +1,10 @@
 
-from django.urls import path,include
+from django.urls import path
 from . import views
 # import templates
-from mainapp import b
+
 
 urlpatterns = [
     
-   path('mainapp/templates/mainapp/stockpicker', views.stockpicker, name='stockpicker')
+   path('', views.index, name='index')
 ]
