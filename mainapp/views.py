@@ -11,8 +11,8 @@ def index(request):
     return render(request, 'stockpicker/index.html',{'stock_picker':tickers})
 
 def table(request):
-    stockpicker=request.GET.getlist('stockpicker')
-    print(stockpicker)
+    # stockpicker=request.GET.getlist('stockpicker')
+    # print(stockpicker)
     stock_picker=['AAPL','MSFT','GOOGL','AMZN','TSLA','META']
 
 
@@ -71,20 +71,12 @@ def table(request):
                     data_list.append(table)
                 else:
                     print(f'could not retrive info for {ticker_symbol}')
-            available_stocks=(stock_picker)
-            data={}
-            for i in stockpicker:
-               if i in available_stocks:
-                    pass
-               else:
-                    return HttpResponse('Error')
-            for i in stockpicker:
-                    details=pd.Dataframe(table[i])
             if data_list:
                 return pd.DataFrame(data_list)
             else:
                 print('Error!!')
                 return None
+        
         else:
             print('Invalid input for tickers. Please provide a string or a list of strings')
 
@@ -92,5 +84,4 @@ def table(request):
     except Exception as e:
         print(f'An error occured: {e}')
         return None
-
-
+table(request=all)
