@@ -9,15 +9,20 @@ Index Page
 <p>Select your stock</p>
 <form action=''>
 <label for='stockpicker:'>
-<select class="form-select form-select-lg mb-3" multiple aria-label="Multiple select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+<select class="form-select form-select-lg mb-3" multiple aria-label="Multiple select example" name='stock_picker'>
+  {% for i in stock_picker %}
+  <option value="{{i}}">{{i}}</option>
+  
+  {% endfor %}
 </select>
-</form>
+<br>
+<div class='d-grid gap-2'>
+<input type="submit" class="btn btn-primary btn-lg">
 </div>
+</form>
+
 {% endblock %}
+{% load static %}
 {% comment %} {% block template %}
 {% include "../base/navbar.html" %}
 code here
