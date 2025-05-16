@@ -1,27 +1,41 @@
 {% extends "../base/basic.html" %}
+{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'mainapp/css/basic.css' %}">
+{% endblock %}
 {% block title %}
-Index Page
+Stock Tracker Results
 {% endblock %}
 {% block body %}
 <div class='container'>
-    <h1>LiveStockTracker</h1>
+    <h1>LiveStockTracker Results</h1>
     <div class="table-container">
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Ticker</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Change</th>
+                    <th scope="col">Change %</th>
+                    <th scope="col">High</th>
+                    <th scope="col">Low</th>
                 </tr>
             </thead>
             <tbody>
-                {% for ticker in stock_picker %}
+                {% for stock in stocks %}
                 <tr>
                     <th scope="row">{{ forloop.counter }}</th>
-                    <td>{{ ticker }}</td>
+                    <td>{{ stock.Symbol }}</td>
+                    <td>{{ stock.Price }}</td>
+                    <td>{{ stock.Change }}</td>
+                    <td>{{ stock.Change_by_Percent }}</td>
+                    <td>{{stock.High}}</td>
+                    <td>{{stock.Low}}</td>
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="2">No stocks available.</td>
+                    <td colspan="5">No stocks selected.</td>
                 </tr>
                 {% endfor %}
             </tbody>

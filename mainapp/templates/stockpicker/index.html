@@ -7,7 +7,7 @@ Index Page
 <div class='container'>
 <h1>Stock Tracker</h1>
 <p>Select your stock</p>
-<form action=''>
+<form action='/table.html'>
 <label for='stockpicker:'>
 <select class="form-select form-select-lg mb-3" multiple aria-label="Multiple select example" name='stock_picker'>
   {% for i in stock_picker %}
@@ -23,26 +23,5 @@ Index Page
 
 {% endblock %}
 {% load static %}
-{% comment %} {% block template %}
-{% include "../base/navbar.html" %}
-code here
-{% endblock %} {% endcomment %}
+<link rel="stylesheet" href="{% static 'mainapp/css/basic.css' %}">
 
-{% comment %} {% load static %}
-{% block meta %}
-{% endblock %}
-
-
-{% block css %}
-<style>
-</style>
-{% endblock %}
-
-{% block body %}
-
-{% endblock %}
-
-{% block js %}
-<script>
-</script>
-{% endblock %} {% endcomment %}

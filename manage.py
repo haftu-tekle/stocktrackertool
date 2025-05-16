@@ -4,6 +4,8 @@
 import os
 import sys
 from pathlib import Path
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'stocktrackertool.settings')
+
 
 VENV_PATH = Path(__file__).resolve().parent / 'stockenv'
 SITE_PACKAGES_PATH = VENV_PATH / 'Lib' / 'site-packages'

@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('table.html', views.table,name='table')
+    path('table.html', views.stockTracker,name='stockTracker')
     
 ]
